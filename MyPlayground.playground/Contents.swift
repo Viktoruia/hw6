@@ -21,9 +21,9 @@ print("Первый массив чисел - \(numbersArray1). Второй м�
 //Возвратить новый массив.
 
 // 1 способ
-let intArray = [1, 2, 3, 4, 5, 6, 7]
-let newIntArray = intArray.map { $0 * $0 }
-print("Массив - \(intArray) и массив с его квадратами - \(newIntArray)")
+let intArray1 = [1, 2, 3, 4, 5, 6, 7]
+let newIntArray1 = intArray1.map { $0 * $0 }
+print("Массив - \(intArray1) и массив с его квадратами - \(newIntArray1)")
 
 // 2 способ
 func intArray2(_ array: [Int]) -> [Int] {
@@ -34,3 +34,24 @@ func intArray2(_ array: [Int]) -> [Int] {
     return newIntArray2
 }
 print(intArray2([2, 4, 6, 8]))
+
+//3. Создать функцию, которая принимает массив int. Возвратить новый массив с только
+//четными элементами.
+
+//let intArray = [1, 2, 3, 4, 5, 6, 7]
+
+// 1 способ
+let newIntArray3 = intArray1.filter { $0 % 2 == 0 }
+print("Новый массив с четными элементами - \(newIntArray3)")
+
+// 2 способ
+func intArray4(_ array: [Int]) -> [Int] {
+    var newIntArray4: [Int] = []
+    for element in array {
+        if element % 2 == 0 {
+            newIntArray4.append(element)
+        }
+    }
+    return newIntArray4
+}
+print("Новый массив с четными элементами - \(intArray4([11, 12, 22, 45, 65, 86]))")

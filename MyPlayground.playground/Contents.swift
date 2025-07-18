@@ -118,3 +118,45 @@ var fruitsInHome: Set<String> = ["абрикосы", "сливы", "лимон",
 
 print("Сейчас у меня дома из любимых фруктов: \(favoriteFruits.intersection(fruitsInHome))")
 print("Сейчас дома нет моих любимых фруктов: \(favoriteFruits.subtracting(fruitsInHome)))")
+
+//5. Реализуйте функцию areEqual<T: Equatable>(_ a: T, _ b: T) -> Bool, которая возвращает true, если два значения равны.
+//Проверьте эту функцию с Int, String и Bool.
+//+ проверить как работают системные функции высшего порядка со словарями и сетами(map, filter, sort)
+
+func areEqual<T: Equatable>(_ a: T, _ b: T) -> Bool {
+    return a == b
+}
+print(areEqual(3, 4))
+print(areEqual("dfg", "dfg"))
+print(areEqual(true, false))
+
+var diction: Dictionary<Int, String> = [1: "a", 2: "b", 3: "c", 4: "d"]
+
+let mapDiction = diction.map {
+    $0.key + 3
+}
+
+let sortDiction = diction.sorted(by: >)
+
+let filterDiction = diction.filter { $0.key < 3 }
+
+print("origin - \(diction)")
+print("map - \(mapDiction)")
+print("sorted - \(sortDiction)")
+print("filter - \(filterDiction)")
+
+
+
+var set: Set<Int> = [1, 2, 3, 4, 5]
+let mapSet = set.map {
+    $0 * 2
+}
+
+let sortSet = set.sorted(by: <)
+
+let filterSet = set.filter { $0 % 2 == 0 }
+
+print("origin - \(set)")
+print("map - \(mapSet)")
+print("sorted - \(sortSet)")
+print("filter - \(filterSet)")

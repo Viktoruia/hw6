@@ -90,3 +90,19 @@ filmArray.remove(at: 0)
 for (index, value) in filmArray.enumerated() {
     print("\(index + 1). \(value)")
 }
+
+//3. Создайте словарь, где ключ — это название страны, а значение — её столица.
+//Добавьте в словарь минимум 3 страны.
+//Реализуйте функцию, которая принимает страну и возвращает строку:
+//“Столица страны — [столица]”,
+//или сообщение: “Информация о стране не найдена.”
+
+let dictCountry: Dictionary<String, String> = ["Беларусь": "Минск", "Россия": "Москва", "Франция": "Париж"]
+
+func dictCountryCapital(for country: String) -> String {
+    if let capital = dictCountry[country] {
+        return "Столица страны \(country) — \(capital)"
+    }
+    return "Информация о стране не найдена."
+}
+print(dictCountryCapital(for: "Беларусь"))

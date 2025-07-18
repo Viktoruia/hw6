@@ -55,3 +55,23 @@ func intArray4(_ array: [Int]) -> [Int] {
     return newIntArray4
 }
 print("Новый массив с четными элементами - \(intArray4([11, 12, 22, 45, 65, 86]))")
+
+//1. Создайте кортеж с информацией о книге: название, автор, год издания.
+//Напишите функцию, принимающую такой кортеж и выводящую красиво оформленную строку:
+//“Книга ‘Название’ автора Автор, издана в Год.”
+
+let myBook = (name: "'Гарри Поттер и философский камень'", author: "Дж.К. Роулинг", year: 1977)
+let (name, author, year) = myBook
+
+func infoBook(to myBook: (name: String, author: String, year: Int)) -> String {
+    return "Книгу \(myBook.name) написала \(myBook.author). Она была издана в \(myBook.year) году."
+}
+print(infoBook(to: myBook))
+
+let myBook2 = (name2: "'Гордость и предубеждение'", author2: "Джейн Остин", year2: 1813)
+let (name2, author2, year2) = myBook2
+
+func infoBook2(to myBook2: (name2: String, author2: String, year2: Int)) -> String {
+    return "Книгу \(myBook2.name2) написала \(myBook2.author2). Она была издана в \(myBook2.year2) году."
+}
+print(infoBook2(to: myBook2))

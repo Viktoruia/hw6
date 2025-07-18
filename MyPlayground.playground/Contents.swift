@@ -75,3 +75,18 @@ func infoBook2(to myBook2: (name2: String, author2: String, year2: Int)) -> Stri
     return "Книгу \(myBook2.name2) написала \(myBook2.author2). Она была издана в \(myBook2.year2) году."
 }
 print(infoBook2(to: myBook2))
+
+//2. Создайте массив из 5 ваших любимых фильмов.
+//Добавьте ещё один фильм.
+//Удалите первый фильм из массива.
+//Напечатайте список фильмов с номерами, начиная с 1:
+//1. Название фильма
+
+var filmArray: Array<String> = ["'Гарри Поттер' (все части)", "'Гордость и предубеждение'", "'Великий Гэтсби'", "'Синистер'", "'Дожить до рассвета'"]
+
+filmArray += ["'Анна Каренина'"]
+filmArray.remove(at: 0)
+
+for (index, value) in filmArray.enumerated() {
+    print("\(index + 1). \(value)")
+}

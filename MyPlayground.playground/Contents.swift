@@ -106,3 +106,15 @@ func dictCountryCapital(for country: String) -> String {
     return "Информация о стране не найдена."
 }
 print(dictCountryCapital(for: "Беларусь"))
+
+//4. Создайте два множества:
+//любимые фрукты
+//фрукты, которые есть дома
+//Найдите пересечение (что из любимого есть дома).
+//Найдите разницу (какие любимые фрукты отсутствуют дома).
+
+var favoriteFruits: Set<String> = ["яблоки", "бананы", "персики", "абрикосы", "гранат"]
+var fruitsInHome: Set<String> = ["абрикосы", "сливы", "лимон", "гранат"]
+
+print("Сейчас у меня дома из любимых фруктов: \(favoriteFruits.intersection(fruitsInHome))")
+print("Сейчас дома нет моих любимых фруктов: \(favoriteFruits.subtracting(fruitsInHome)))")

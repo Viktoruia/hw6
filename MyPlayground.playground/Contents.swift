@@ -16,6 +16,9 @@ let newNumbersArray = Array(unionNumbersArrays)
 let sortedArray = newNumbersArray.sorted { $0 < $1 }
 print("Первый массив чисел - \(numbersArray1). Второй массив чисел - \(numbersArray2). Новый массив чисел, объединяющий их - \(sortedArray)")
 
+// 2 способ
+let numbersArray = numbersArray1 + numbersArray2
+print("Первый массив чисел - \(numbersArray1). Второй массив чисел - \(numbersArray2). Новый массив чисел, объединяющий их - \(numbersArray)")
 
 //2. Создать функцию, которая принимает массив int. Возвести все Int в квадрат.
 //Возвратить новый массив.
@@ -67,6 +70,8 @@ func infoBook(to myBook: (name: String, author: String, year: Int)) -> String {
     return "Книгу \(myBook.name) написала \(myBook.author). Она была издана в \(myBook.year) году."
 }
 print(infoBook(to: myBook))
+
+// закрепляю для себя
 
 let myBook2 = (name2: "'Гордость и предубеждение'", author2: "Джейн Остин", year2: 1813)
 let (name2, author2, year2) = myBook2
